@@ -1,12 +1,8 @@
-import { ReactComponent as Logo } from '../svgs/navbar_logo.svg';
-import { ReactComponent as Moon } from '../svgs/navbar_moon.svg';
-import { ReactComponent as Sun } from '../svgs/navbar_sun.svg';
-import { ReactComponent as UserLogin } from '../svgs/navbar_userlogin.svg';
 import '../output.css';
-import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom';
 
-function Switch() {
-	const [darkTheme,setDarkTheme]=useState(false);
+function Switch(props) {
+	const [darkTheme,setDarkTheme]= props;
 
 	return (
 		<div id="switch" className="switch h-[2rem]" onClick={()=>{
@@ -22,44 +18,47 @@ function Switch() {
 			console.log(darkTheme);
 			setDarkTheme(!darkTheme);
 		}}>
+			
+			<img src={(darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_moondark.svg':process.env.PUBLIC_URL+'/svgs/navbar_moon.svg')} alt="" className={(darkTheme?'hidden ':'')+'h-8 '} />
 
-			<Moon height="2rem" className={darkTheme?'hidden':''} />
-
-			<Sun height="2rem" className={!darkTheme?'hidden':''}/>			
+			<img src={(darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_sundark.svg':process.env.PUBLIC_URL+'/svgs/navbar_sun.svg')} alt="" className={(!darkTheme?'hidden ':'')+'h-8 '}/>			
 
 		</div>
 	);
 }
 
 
-function Navbar() {
+function Navbar(props) {
+  const [darkTheme]= props;
+  console.log(darkTheme?"dark":"light");
+  const path=useLocation().pathname;
 
   return (
-    <div id="Navbar" className="fixed top-0 left-0 right-0 flex justify-between px-24 py-2 dark:bg-slate-800">
+    <div className="navbar">
 
-		<div className="flex flex-row justify-between w-1/3" >
+		<div className="flex flex-row justify-between items-center" >
 
-			<Logo height="2rem"/>
+			<img src={process.env.PUBLIC_URL+'/svgs/navbar_logo.svg'} alt="" className="h-8 mr-8"/>
 
-			<div className="bg-black dark:bg-orange-700 rounded">
-				Home
+			<div className={"nav "+(path==="/"?"active":"")}>
+				<Link to={"/"}>Home</Link>
 			</div>
 
-			<div className="">
-				Contacts
+			<div className={"nav "+(path==="/contacts"?"active":"")}>
+				<Link to={"/contacts"}>Contacts</Link>
 			</div>
 
-			<div className="">
-				Projects
+			<div className={"nav "+(path==="/projects"?"active":"")}>
+				<Link to={"/projects"}>Projects</Link>
 			</div>
 
 		</div>
 
 		<div className="settings flex">
 
-			<Switch />
+			<Switch props={props} />
 
-			<UserLogin height="2rem" />
+			<img src={darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_userlogindark.svg':process.env.PUBLIC_URL+'/svgs/navbar_userlogin.svg'} alt="" className='h-8 ml-8' />
 			
 		</div>
 

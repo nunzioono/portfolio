@@ -1,1 +1,49 @@
+@tailwind base;
 @tailwind utilities;
+@tailwind components;
+
+@font-face {
+    font-family: "Khula Regular";
+    src: url("../public/fonts/Khula-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Khula Bold";
+    src: url("../public/fonts/Khula-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Martel Regular";
+    src: url("../public/fonts/Martel-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Martel Bold";
+    src: url("../public/fonts/Martel-Bold.ttf");
+}
+
+@font-face {
+    font-family: "Cormorant Infant Regular";
+    src: url("../public/fonts/CormorantInfant-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Cormorant Infant Bold";
+    src: url("../public/fonts/CormorantInfant-Bold.ttf");
+}
+
+@layer components{
+    .navbar {
+        @apply fixed top-0 left-0 right-0 flex justify-between items-center px-24 py-6 bg-white dark:bg-[#040316];
+    }
+
+    .nav {
+        @apply bg-transparent rounded text-grey text-center font-cormorantregular text-xl py-2 px-8 mx-2 hover:bg-lightblue hover:text-white dark:text-lightorange dark:hover:bg-lightorange dark:hover:text-white;
+    }
+
+    .nav.active {
+        @apply bg-blue text-white dark:bg-orange dark:text-white;
+    }
+
+
+}
