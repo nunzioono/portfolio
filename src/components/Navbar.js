@@ -1,9 +1,15 @@
 import '../output.css';
 import { Link, useLocation } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import {
+	invert,
+  	selectDarkTheme,
+} from '../slices/themeSlice.js';
 
-function Switch(props) {
-	const [darkTheme,setDarkTheme]= props;
-
+function Switch() {
+	const darkTheme = useSelector(selectDarkTheme);
+	const dispatch = useDispatch();
+	
 	return (
 		<div id="switch" className="switch h-[2rem]" onClick={()=>{
 			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -15,8 +21,7 @@ function Switch(props) {
 
 			// Whenever the user explicitly chooses light mode
 			localStorage.theme = darkTheme?'dark':'light';
-			console.log(darkTheme);
-			setDarkTheme(!darkTheme);
+			dispatch(invert());
 		}}>
 			
 			<img src={(darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_moondark.svg':process.env.PUBLIC_URL+'/svgs/navbar_moon.svg')} alt="" className={(darkTheme?'hidden ':'')+'h-8 '} />
@@ -28,17 +33,18 @@ function Switch(props) {
 }
 
 
-function Navbar(props) {
-  const [darkTheme]= props;
-  console.log(darkTheme?"dark":"light");
+function Navbar() {
   const path=useLocation().pathname;
-
+  const darkTheme = useSelector(selectDarkTheme); 
+  const logoPath = darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_logodark.svg':process.env.PUBLIC_URL+'/svgs/navbar_logo.svg';
+  const userLoginPath = darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_userlogindark.svg':process.env.PUBLIC_URL+'/svgs/navbar_userlogin.svg';
+  
   return (
     <div className="navbar">
 
 		<div className="flex flex-row justify-between items-center" >
 
-			<img src={process.env.PUBLIC_URL+'/svgs/navbar_logo.svg'} alt="" className="h-8 mr-8"/>
+			<img src={logoPath} alt="" className="h-8 mr-8"/>
 
 			<div className={"nav "+(path==="/"?"active":"")}>
 				<Link to={"/"}>Home</Link>
@@ -56,9 +62,9 @@ function Navbar(props) {
 
 		<div className="settings flex">
 
-			<Switch props={props} />
+			<Switch />
 
-			<img src={darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_userlogindark.svg':process.env.PUBLIC_URL+'/svgs/navbar_userlogin.svg'} alt="" className='h-8 ml-8' />
+			<img src={userLoginPath} alt="" className='h-8 ml-8' />
 			
 		</div>
 
