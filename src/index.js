@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Home from './routes/Home';
-import Root from './routes/Root';
+import Home from './routes/Home.js';
+import Root from './routes/Root.js';
 import reportWebVitals from './reportWebVitals';
 import { 
   Route,
@@ -11,18 +11,22 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
+import Contacts from './routes/Contacts.js';
+import Projects from './routes/Projects.js';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-        <Route path="/" element={<Root />} >
+      <Route path="/" element={<Root />} >
 
             <Route index element={<Home />}></Route>
+            
+            <Route path="/home" element={<Home />}></Route>
+
+            <Route path="/contacts" element={<Contacts />}></Route>
+
+            <Route path="/projects" element={<Projects />}></Route>
         
-            <Route path="/contacts"></Route>
-        
-            <Route path="/projects"></Route>
-        
-        </Route>
+      </Route>
     )
 );
 
