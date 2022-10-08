@@ -8,7 +8,9 @@ import {
 function Switch() {
 	const darkTheme = useSelector(selectDarkTheme);
 	const dispatch = useDispatch();
-	
+	const moonPath = darkTheme?process.env.PUBLIC_URL+'/images/navbar_moondark.png':process.env.PUBLIC_URL+'/images/navbar_moon.png';
+	const sunPath = darkTheme?process.env.PUBLIC_URL+'/images/navbar_sundark.png':process.env.PUBLIC_URL+'/images/navbar_sun.png';
+
 	return (
 		<div id="switch" className="switch h-[2rem]" onClick={()=>{
 			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
@@ -23,9 +25,9 @@ function Switch() {
 			dispatch(invert());
 		}}>
 			
-			<img src={(darkTheme?process.env.PUBLIC_URL+'/images/svgs/navbar_moondark.svg':process.env.PUBLIC_URL+'/images/svgs/navbar_moon.svg')} alt="" className={(darkTheme?'hidden ':'')+'h-8 '} />
+			<img src={moonPath} alt="" className={(darkTheme?'hidden ':'')+'h-8 '} />
 
-			<img src={(darkTheme?process.env.PUBLIC_URL+'/images/svgs/navbar_sundark.svg':process.env.PUBLIC_URL+'/images/svgs/navbar_sun.svg')} alt="" className={(!darkTheme?'hidden ':'')+'h-8 '}/>			
+			<img src={sunPath} alt="" className={(!darkTheme?'hidden ':'')+'h-8 '}/>			
 
 		</div>
 	);
@@ -35,8 +37,8 @@ function Switch() {
 function Navbar() {
   const path=useLocation().pathname;
   const darkTheme = useSelector(selectDarkTheme); 
-  const logoPath = darkTheme?process.env.PUBLIC_URL+'/images/svgs/navbar_logodark.svg':process.env.PUBLIC_URL+'/images/svgs/navbar_logo.svg';
-  const userLoginPath = darkTheme?process.env.PUBLIC_URL+'/images/svgs/navbar_userlogindark.svg':process.env.PUBLIC_URL+'/images/svgs/navbar_userlogin.svg';
+  const logoPath = darkTheme?process.env.PUBLIC_URL+'/images/navbar_logodark.png':process.env.PUBLIC_URL+'/images/navbar_logo.png';
+  const userLoginPath = darkTheme?process.env.PUBLIC_URL+'/images/navbar_userlogindark.png':process.env.PUBLIC_URL+'/images/navbar_userlogin.png';
   
   return (
     <div className="navbar z-50">

@@ -1,8 +1,0 @@
-<svg class="Ellisse_43_bg">
-    <radialGradient id="Ellisse_43_bg" spreadMethod="pad" x1="0" x2="0" y1="0" y2="0">
-        <stop offset="0" stopColor="#285ef3" stopOpacity="1"></stop>
-        <stop offset="1" stopColor="#7a9bf5" stopOpacity="0"></stop>
-    </radialGradient>
-    <ellipse id="Ellisse_43_bg" rx="335" ry="335" cx="335" cy="335">
-    </ellipse>
-</svg>

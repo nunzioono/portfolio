@@ -7,14 +7,14 @@ import {
 function Home() {
   const darkTheme = useSelector(selectDarkTheme); 
 
-  const profilePath = process.env.PUBLIC_URL+"/images/profile.png";
-  const rightBodyPath = process.env.PUBLIC_URL+"/images/Left body.png";
-  const rightBodyPath2 = process.env.PUBLIC_URL+"/images/Left body 2.png";
-  const rightBodyPath3 = process.env.PUBLIC_URL+"/images/Left body 3.png";
-  const rightBodyPath4 = process.env.PUBLIC_URL+"/images/Left body 4.png";
-  const shadowPath = process.env.PUBLIC_URL+(darkTheme?"/images/darkshadow.png":"/images/shadow.png");
-
-
+  const profilePath = process.env.PUBLIC_URL+"/images/home_body1_leftside_profile.png";
+  const rightBodyPath = process.env.PUBLIC_URL+"/images/home_body1_rightside_show1.png";
+  const rightBodyPath2 = process.env.PUBLIC_URL+"/images/home_body1_rightside_show2.png";
+  const rightBodyPath3 = process.env.PUBLIC_URL+"/images/home_body1_rightside_show3.png";
+  const rightBodyPath4 = process.env.PUBLIC_URL+"/images/home_body1_rightside_show4.png";
+  const shadowPath = process.env.PUBLIC_URL+(darkTheme?"/images/home_body1_rightside_darkshadow.png":"/images/home_body1_rightside_shadow.png");
+  const mapPath = process.env.PUBLIC_URL+(darkTheme?'/images/home_body2_leftside_darkmap.png':'/images/home_body2_leftside_map.png');
+  const indicatorPath = process.env.PUBLIC_URL+(darkTheme?"/images/home_body2_rightside_darkindicator.png":"/images/home_body2_rightside_indicator.png")
   return (
     <div className="home h-screen w-full mt-18 px-24 z-10 dark:bg-dark">
 
@@ -43,7 +43,7 @@ function Home() {
 
 					<div className='flex'>
 
-						<img src={rightBodyPath} alt="" className='mr-[-8rem]'/>
+						<img src={rightBodyPath} alt="" className='mr-[-8rem] hover:scale-125'/>
 							
 						<img src={rightBodyPath2} alt="" className=''/>
 
@@ -51,7 +51,7 @@ function Home() {
 						
 					<div className='flex mt-[-8rem] z-0'>
 					
-						<img src={rightBodyPath3} alt="" className='mr-[-8rem]'/>
+						<img src={rightBodyPath3} alt="" className='mr-[-8rem] transition-transform hover:scale-125 hover:rotate-[-18deg]'/>
 							
 						<img src={rightBodyPath4} alt="" className=''/>	
 					
@@ -63,43 +63,57 @@ function Home() {
 			
 		</div>
 
-        <div id="body2 h-screen w-full flex">
-			<div id="Right_body">
-				<img src="../svgs/home_body2_indicator.svg" alt="" />
-				<div id="Step3">
-					<div id="Paragraph">
-						<div id="Ive_worked_for__for_a_long_tim">
-							<span>I've worked for … for a long time and i'm exploring new possibilities, contact me if interested in work toghether!</span>
-						</div>
-						<div id="Getting_to_work">
-							<span>Getting to work</span>
-						</div>
-					</div>
-				</div>
-				<div id="Step2">
-					<div id="Paragraph_">
-						<div id="I_moved_here_for_study_at_the_">
-							<span>I moved here for study at the age of 18 alone, got the software engineering degree at the Politecnich of Turin</span>
-						</div>
-						<div id="Transfered_to_Turin">
-							<span>Transfered to Turin</span>
-						</div>
-					</div>
-				</div>
-				<div id="Step1">
-					<div id="Paragraph_ba">
-						<div id="Im_originary_from_foggia_im_bo">
-							<span>I'm originary from foggia, i'm born and i still have my family here</span>
-						</div>
-						<div id="Born_in_Foggia_stayed_there_ti">
-							<span>Born in Foggia, stayed there till 18</span>
-						</div>
-					</div>
-				</div>
+        <div className='body2 h-screen w-full flex justify-center items-center'>
+			
+			<div className='left_body w-1/3'>
+				<img src={mapPath} alt='' />
 			</div>
+			
+			<div className='right_body w-2/3 flex justify-real-end'>
+
+				<div className='flex flex-col justify-center items-center'>
+					<div id="Step1">
+						<div className='flex flex-col justify-center items-center'>
+							<div className='font-martelbold text-grey text-5xl'>
+								Born in Foggia, stayed there till 18
+							</div>
+							<div className='font-martelbold text-grey text-4xl'>
+								<span>I'm originary from foggia, i'm born and i still have my family here</span>
+							</div>
+							
+						</div>
+					</div>
+	
+					<div id="Step2">
+						<div className='flex flex-col justify-center items-center'>
+							<div className='font-martelbold text-grey text-4xl'>
+								<span>Transfered to Turin</span>
+							</div>
+							<div className='font-martelbold text-grey text-4xl'>
+								<span>I moved here for study at the age of 18 alone, got the software engineering degree at the Politecnich of Turin</span>
+							</div>
+						</div>
+					</div>
+
+					<div id="Step3">
+						<div className='flex flex-col justify-center items-center'>
+							<div className='font-martelbold text-grey text-4xl'>
+								<span>Getting to work</span>
+							</div>
+							<div className='font-martelbold text-grey text-4xl'>
+								<span>I've worked for … for a long time and i'm exploring new possibilities, contact me if interested in work toghether!</span>
+							</div>	
+						</div>
+					</div>				
+				</div>
+
+				<img src={indicatorPath} alt="" className='h-[100rem]' />
+
+			</div>
+
 		</div>
 		
-    </div>
+	</div>
   );
 
 }

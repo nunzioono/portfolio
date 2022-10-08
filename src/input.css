@@ -32,7 +32,13 @@
     src: url("../public/fonts/CormorantInfant-Bold.ttf");
 }
 
-@layer components{
+@layer base {
+    .justify-real-end {
+        justify-content: end;
+    }
+}
+
+@layer components {
     .navbar {
         @apply fixed top-0 left-0 right-0 flex justify-between items-center px-24 py-6 bg-white dark:bg-dark;
     }
