@@ -57,4 +57,11 @@
         @apply font-khularegular text-lightgrey text-xl
     }
 
+    .footer {
+        @apply flex justify-between items-center px-24 py-6 bg-white dark:bg-dark
+    }
+
+    .footer_social_icon {
+        @apply h-5
+    }
 }
