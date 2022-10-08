@@ -593,20 +593,16 @@ video {
   margin-bottom: 2.5rem;
 }
 
-.ml-\[6rem\] {
-  margin-left: 6rem;
-}
-
 .mt-\[8\.5rem\] {
   margin-top: 8.5rem;
 }
 
-.mr-\[-8rem\] {
-  margin-right: -8rem;
-}
-
 .mt-\[-8rem\] {
   margin-top: -8rem;
+}
+
+.ml-16 {
+  margin-left: 4rem;
 }
 
 .inline {
@@ -654,6 +650,10 @@ video {
   width: 66.666667%;
 }
 
+.w-1\/2 {
+  width: 50%;
+}
+
 .translate-y-\[-3rem\] {
   --tw-translate-y: -3rem;
   -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
@@ -674,6 +674,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
 }
 
 .justify-center {
@@ -819,6 +823,45 @@ video {
   background-color: rgb(218 91 44 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.home_show {
+  margin-right: -8rem;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.home_show:hover {
+  --tw-rotate: -18deg;
+  --tw-scale-x: 1.25;
+  --tw-scale-y: 1.25;
+  -webkit-transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+          transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.home_body2_title {
+  margin-bottom: 1rem;
+  font-family: Martel Bold;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  --tw-text-opacity: 1;
+  color: rgb(53 53 53 / var(--tw-text-opacity));
+}
+
+.dark .home_body2_title {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.home_body2_desc {
+  font-family: Khula Regular;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  --tw-text-opacity: 1;
+  color: rgb(112 112 112 / var(--tw-text-opacity));
 }
 
 @font-face {

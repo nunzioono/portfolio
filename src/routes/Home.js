@@ -16,7 +16,7 @@ function Home() {
   const mapPath = process.env.PUBLIC_URL+(darkTheme?'/images/home_body2_leftside_darkmap.png':'/images/home_body2_leftside_map.png');
   const indicatorPath = process.env.PUBLIC_URL+(darkTheme?"/images/home_body2_rightside_darkindicator.png":"/images/home_body2_rightside_indicator.png")
   return (
-    <div className="home h-screen w-full mt-18 px-24 z-10 dark:bg-dark">
+    <div className="home w-full mt-18 px-24 z-10 dark:bg-dark">
 
 		<div className="body1 h-screen w-full flex">
 			<div className="left_body h-screen w-1/3 flex flex-col justify-center translate-y-[-3rem]">
@@ -39,21 +39,21 @@ function Home() {
 
 				<img src={shadowPath} alt="" className='absolute w-66 w-66 top-[15%] left-1/4 z-0'/>
 
-				<div className='h-min ml-[6rem] mt-[8.5rem] z-10'>
+				<div className='h-min mt-[8.5rem] z-10'>
 
 					<div className='flex'>
 
-						<img src={rightBodyPath} alt="" className='mr-[-8rem] hover:scale-125'/>
+						<img src={rightBodyPath} alt="" className='home_show'/>
 							
-						<img src={rightBodyPath2} alt="" className=''/>
+						<img src={rightBodyPath2} alt="" className='home_show'/>
 
 					</div>
 						
 					<div className='flex mt-[-8rem] z-0'>
 					
-						<img src={rightBodyPath3} alt="" className='mr-[-8rem] transition-transform hover:scale-125 hover:rotate-[-18deg]'/>
+						<img src={rightBodyPath3} alt="" className='home_show'/>
 							
-						<img src={rightBodyPath4} alt="" className=''/>	
+						<img src={rightBodyPath4} alt="" className='home_show'/>	
 					
 					</div>
 
@@ -63,21 +63,21 @@ function Home() {
 			
 		</div>
 
-        <div className='body2 h-screen w-full flex justify-center items-center'>
+        <div className='body2 h-screen w-full flex justify-center items-center  dark:bg-dark'>
 			
-			<div className='left_body w-1/3'>
+			<div className='left_body'>
 				<img src={mapPath} alt='' />
 			</div>
 			
-			<div className='right_body w-2/3 flex justify-real-end'>
+			<div className='right_body w-1/2 flex justify-end'>
 
-				<div className='flex flex-col justify-center items-center'>
+				<div className='flex flex-col justify-between items-center'>
 					<div id="Step1">
 						<div className='flex flex-col justify-center items-center'>
-							<div className='font-martelbold text-grey text-5xl'>
+							<div className='home_body2_title'>
 								Born in Foggia, stayed there till 18
 							</div>
-							<div className='font-martelbold text-grey text-4xl'>
+							<div className='home_body2_desc'>
 								<span>I'm originary from foggia, i'm born and i still have my family here</span>
 							</div>
 							
@@ -86,10 +86,10 @@ function Home() {
 	
 					<div id="Step2">
 						<div className='flex flex-col justify-center items-center'>
-							<div className='font-martelbold text-grey text-4xl'>
+							<div className='home_body2_title'>
 								<span>Transfered to Turin</span>
 							</div>
-							<div className='font-martelbold text-grey text-4xl'>
+							<div className='home_body2_desc'>
 								<span>I moved here for study at the age of 18 alone, got the software engineering degree at the Politecnich of Turin</span>
 							</div>
 						</div>
@@ -97,17 +97,17 @@ function Home() {
 
 					<div id="Step3">
 						<div className='flex flex-col justify-center items-center'>
-							<div className='font-martelbold text-grey text-4xl'>
+							<div className='home_body2_title'>
 								<span>Getting to work</span>
 							</div>
-							<div className='font-martelbold text-grey text-4xl'>
+							<div className='home_body2_desc'>
 								<span>I've worked for … for a long time and i'm exploring new possibilities, contact me if interested in work toghether!</span>
 							</div>	
 						</div>
 					</div>				
 				</div>
 
-				<img src={indicatorPath} alt="" className='h-[100rem]' />
+				<img src={indicatorPath} alt="" className='ml-16' />
 
 			</div>
 

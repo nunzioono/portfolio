@@ -32,12 +32,6 @@
     src: url("../public/fonts/CormorantInfant-Bold.ttf");
 }
 
-@layer base {
-    .justify-real-end {
-        justify-content: end;
-    }
-}
-
 @layer components {
     .navbar {
         @apply fixed top-0 left-0 right-0 flex justify-between items-center px-24 py-6 bg-white dark:bg-dark;
@@ -51,5 +45,16 @@
         @apply bg-blue text-white dark:bg-orange dark:text-white;
     }
 
+    .home_show {
+        @apply mr-[-8rem] transition-transform hover:scale-125 hover:rotate-[-18deg]
+    }
+
+    .home_body2_title {
+        @apply font-martelbold text-grey text-3xl mb-4 dark:text-white
+    }
+
+    .home_body2_desc {
+        @apply font-khularegular text-lightgrey text-xl
+    }
 
 }
