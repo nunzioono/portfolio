@@ -5,12 +5,15 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        darkgrey: "#9b9b9b",
         grey: "#353535",
+        semilighgrey: "#535353",
         lightgrey: "#707070",
         blue: "#285ef3",
         lightblue: "#507cf4",
         orange: "#DA5B2C",
-        lightorange: "#ffb210"
+        lightorange: "#ffb210",
+        dark: "#040316",
       },
       fontFamily: {
         khularegular: ["Khula Regular"],

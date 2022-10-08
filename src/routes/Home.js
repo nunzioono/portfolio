@@ -1,8 +1,69 @@
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import {
+  	selectDarkTheme,
+} from '../slices/themeSlice.js';
+
 function Home() {
+  const darkTheme = useSelector(selectDarkTheme); 
+
+  const profilePath = process.env.PUBLIC_URL+"/images/profile.png";
+  const rightBodyPath = process.env.PUBLIC_URL+"/images/Left body.png";
+  const rightBodyPath2 = process.env.PUBLIC_URL+"/images/Left body 2.png";
+  const rightBodyPath3 = process.env.PUBLIC_URL+"/images/Left body 3.png";
+  const rightBodyPath4 = process.env.PUBLIC_URL+"/images/Left body 4.png";
+  const shadowPath = process.env.PUBLIC_URL+(darkTheme?"/images/darkshadow.png":"/images/shadow.png");
+
 
   return (
-    <div>
-        <div id="Body2">
+    <div className="home h-screen w-full mt-18 px-24 z-10 dark:bg-dark">
+
+		<div className="body1 h-screen w-full flex">
+			<div className="left_body h-screen w-1/3 flex flex-col justify-center translate-y-[-3rem]">
+
+				<img src={profilePath} alt="" className="w-12 rounded-full mb-12"/>
+				<div>
+					<div className="text-6xl font-martelbold text-semilightgrey mb-10 dark:text-white">
+						A software <span className="text-blue dark:text-lightorange">designer</span> and <span className="text-blue dark:text-lightorange">developer</span> with a dream
+					</div>
+					<div className="font-khularegular text-semilightgrey w-full mb-10 dark:text-darkgrey">
+						<span>Hi i'm Nunzio, a software engineer based in Italy. I've degreed in 2023 and growing my interest for design since that.</span>
+					</div>
+					<Link to="/contacts" className="w-full font-martelbold text-white text-center text-lg rounded-lg bg-lightblue hover:bg-blue px-52 py-3 cursor-pointer dark:bg-lightorange dark:hover:bg-orange">
+						Contact me
+					</Link>
+				</div>
+					
+			</div>
+			<div className="relative right_body h-screen w-2/3 flex justify-center">
+
+				<img src={shadowPath} alt="" className='absolute w-66 w-66 top-[15%] left-1/4 z-0'/>
+
+				<div className='h-min ml-[6rem] mt-[8.5rem] z-10'>
+
+					<div className='flex'>
+
+						<img src={rightBodyPath} alt="" className='mr-[-8rem]'/>
+							
+						<img src={rightBodyPath2} alt="" className=''/>
+
+					</div>
+						
+					<div className='flex mt-[-8rem] z-0'>
+					
+						<img src={rightBodyPath3} alt="" className='mr-[-8rem]'/>
+							
+						<img src={rightBodyPath4} alt="" className=''/>	
+					
+					</div>
+
+				</div>
+
+			</div>
+			
+		</div>
+
+        <div id="body2 h-screen w-full flex">
 			<div id="Right_body">
 				<img src="../svgs/home_body2_indicator.svg" alt="" />
 				<div id="Step3">
@@ -37,35 +98,7 @@ function Home() {
 				</div>
 			</div>
 		</div>
-		<div id="Body1">
-			<div id="right_body">
-				<img src="../svgs/home_body1_shadow" alt=""/>
-				<img id="Left_body" src="Left_body.png" srcSet="Left_body.png 1x, Left_body@2x.png 2x" alt=""/>
-					
-				<img id="Left_body_bi" src="Left_body_bi.png" srcSet="Left_body_bi.png 1x, Left_body_bi@2x.png 2x" alt=""/>
-					
-				<img id="Left_body_bj" src="Left_body_bj.png" srcSet="Left_body_bj.png 1x, Left_body_bj@2x.png 2x" alt=""/>
-					
-				<div id="Left_body_bk" className="Left_body">
-					<img id="Left_body_bl" src="Left_body_bl.png" srcSet="Left_body_bl.png 1x, Left_body_bl@2x.png 2x" alt=""/>	
-				</div>
-			</div>
-			<div id="left_body">
-				<div id="Raggruppa_6">
-					<div>
-						Contact me
-					</div>
-					<div id="Hi_im_Nunzio_a_software_engine">
-						<span>Hi i'm Nunzio, a software engineer based in Italy. I've degreed in 2023 and growing my interest for design since that.</span>
-					</div>
-					<div id="title">
-						A software <span>designer</span> and <span>developer</span> with a dream
-					</div>
-				</div>
-				<img id="DSC_1400" src="DSC_1400.png" srcSet="DSC_1400.png 1x, DSC_1400@2x.png 2x" alt=""/>
-					
-			</div>
-		</div>
+		
     </div>
   );
 

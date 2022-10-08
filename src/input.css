@@ -34,7 +34,7 @@
 
 @layer components{
     .navbar {
-        @apply fixed top-0 left-0 right-0 flex justify-between items-center px-24 py-6 bg-white dark:bg-[#040316];
+        @apply fixed top-0 left-0 right-0 flex justify-between items-center px-24 py-6 bg-white dark:bg-dark;
     }
 
     .nav {

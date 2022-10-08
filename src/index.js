@@ -2,6 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './routes/Home.js';
 import Root from './routes/Root.js';
+import Contacts from './routes/Contacts.js';
+import Projects from './routes/Projects.js';
+import NoMatch from './routes/NoMatch.js';
 import reportWebVitals from './reportWebVitals';
 import { 
   Route,
@@ -11,12 +14,11 @@ import {
 } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './store';
-import Contacts from './routes/Contacts.js';
-import Projects from './routes/Projects.js';
+
 
 const router = createBrowserRouter(
     createRoutesFromElements(
-      <Route path="/" element={<Root />} >
+      <Route path="/" element={<Root />} errorElement={<NoMatch/>} >
 
             <Route index element={<Home />}></Route>
             
@@ -25,7 +27,9 @@ const router = createBrowserRouter(
             <Route path="/contacts" element={<Contacts />}></Route>
 
             <Route path="/projects" element={<Projects />}></Route>
-        
+
+            <Route path="/*" element={<NoMatch />}></Route>
+
       </Route>
     )
 );

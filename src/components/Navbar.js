@@ -23,9 +23,9 @@ function Switch() {
 			dispatch(invert());
 		}}>
 			
-			<img src={(darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_moondark.svg':process.env.PUBLIC_URL+'/svgs/navbar_moon.svg')} alt="" className={(darkTheme?'hidden ':'')+'h-8 '} />
+			<img src={(darkTheme?process.env.PUBLIC_URL+'/images/svgs/navbar_moondark.svg':process.env.PUBLIC_URL+'/images/svgs/navbar_moon.svg')} alt="" className={(darkTheme?'hidden ':'')+'h-8 '} />
 
-			<img src={(darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_sundark.svg':process.env.PUBLIC_URL+'/svgs/navbar_sun.svg')} alt="" className={(!darkTheme?'hidden ':'')+'h-8 '}/>			
+			<img src={(darkTheme?process.env.PUBLIC_URL+'/images/svgs/navbar_sundark.svg':process.env.PUBLIC_URL+'/images/svgs/navbar_sun.svg')} alt="" className={(!darkTheme?'hidden ':'')+'h-8 '}/>			
 
 		</div>
 	);
@@ -35,17 +35,17 @@ function Switch() {
 function Navbar() {
   const path=useLocation().pathname;
   const darkTheme = useSelector(selectDarkTheme); 
-  const logoPath = darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_logodark.svg':process.env.PUBLIC_URL+'/svgs/navbar_logo.svg';
-  const userLoginPath = darkTheme?process.env.PUBLIC_URL+'/svgs/navbar_userlogindark.svg':process.env.PUBLIC_URL+'/svgs/navbar_userlogin.svg';
+  const logoPath = darkTheme?process.env.PUBLIC_URL+'/images/svgs/navbar_logodark.svg':process.env.PUBLIC_URL+'/images/svgs/navbar_logo.svg';
+  const userLoginPath = darkTheme?process.env.PUBLIC_URL+'/images/svgs/navbar_userlogindark.svg':process.env.PUBLIC_URL+'/images/svgs/navbar_userlogin.svg';
   
   return (
-    <div className="navbar">
+    <div className="navbar z-50">
 
 		<div className="flex flex-row justify-between items-center" >
 
 			<img src={logoPath} alt="" className="h-8 mr-8"/>
 
-			<div className={"nav "+(path==="/"?"active":"")}>
+			<div className={"nav "+((path==="/" || path==="/home")?"active":"")}>
 				<Link to={"/"}>Home</Link>
 			</div>
 
