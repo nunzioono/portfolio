@@ -6,7 +6,7 @@ import {
 
 function Home() {
   const darkTheme = useSelector(selectDarkTheme); 
-
+  console.log(darkTheme)
   const profilePath = process.env.PUBLIC_URL+"/images/home_body1_leftside_profile.png";
   const rightBodyPath = process.env.PUBLIC_URL+"/images/home_body1_rightside_show1.png";
   const rightBodyPath2 = process.env.PUBLIC_URL+"/images/home_body1_rightside_show2.png";
@@ -24,7 +24,7 @@ function Home() {
 				<img src={profilePath} alt="" className="w-12 rounded-full mb-12"/>
 				<div>
 					<div className="text-6xl font-martelbold text-semilightgrey mb-10 dark:text-white">
-						A software <span className="text-blue dark:text-lightorange">designer</span> and <span className="text-blue dark:text-lightorange">developer</span> with a dream
+						A software <span className="text-blue dark:text-lightorange">engineer</span> that <span className="text-blue dark:text-lightorange">designs</span> and <span className="text-blue dark:text-lightorange">developes</span> things
 					</div>
 					<div className="font-khularegular text-semilightgrey w-full mb-10 dark:text-darkgrey">
 						<span>Hi i'm Nunzio, a software engineer based in Italy. I've degreed in 2023 and growing my interest for design since that.</span>
@@ -35,25 +35,25 @@ function Home() {
 				</div>
 					
 			</div>
-			<div className="relative right_body h-screen w-2/3 flex justify-center">
+			<div className="relative right_body h-screen w-2/3 flex justify-center items-center">
 
-				<img src={shadowPath} alt="" className='absolute w-66 w-66 top-[15%] left-1/4 z-0'/>
+				<img src={shadowPath} alt="" className='absolute w-66 w-66 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0'/>
 
-				<div className='h-min mt-[8.5rem] z-10'>
+				<div className='h-min z-10'>
 
 					<div className='flex'>
 
-						<img src={rightBodyPath} alt="" className='home_show'/>
+						<img src={rightBodyPath} alt="" className='home_show -mr-8 z-40'/>
 							
-						<img src={rightBodyPath2} alt="" className='home_show'/>
+						<img src={rightBodyPath2} alt="" className='home_show z-30'/>
 
 					</div>
 						
-					<div className='flex mt-[-8rem] z-0'>
+					<div className='flex z-0 -mt-8'>
 					
-						<img src={rightBodyPath3} alt="" className='home_show'/>
+						<img src={rightBodyPath3} alt="" className='home_show -mr-8 z-30'/>
 							
-						<img src={rightBodyPath4} alt="" className='home_show'/>	
+						<img src={rightBodyPath4} alt="" className='home_show z-20'/>	
 					
 					</div>
 
@@ -63,15 +63,15 @@ function Home() {
 			
 		</div>
 
-        <div className='body2 h-screen w-full flex justify-center items-center  dark:bg-dark'>
+        <div className='body2 h-screen w-full flex justify-between items-center  dark:bg-dark'>
 			
-			<div className='left_body'>
-				<img src={mapPath} alt='' />
+			<div className='left_body flex justify-start'>
+				<img src={mapPath} alt='' className='h-[48rem] w-auto' />
 			</div>
 			
 			<div className='right_body w-1/2 flex justify-end'>
 
-				<div className='flex flex-col justify-between items-center'>
+				<div className='h-[48rem] w-[36rem] flex flex-col justify-between items-center'>
 					<div id="Step1">
 						<div className='flex flex-col justify-center items-center'>
 							<div className='home_body2_title'>
