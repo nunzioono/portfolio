@@ -31,7 +31,7 @@ const Contacts= () => {
                 </div>
                 <div className="right-side pl-56  w-1/2 flex flex-col justify-start items-start">
                     <h3 className="font-martelbold text-3xl text-grey mb-8 dark:text-white">Reach me on my contacts:</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2989.8677461982957!2d15.551600315657607!3d41.46378369921818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1339d85c06f435a3%3A0xa599dfedb7f5f68!2sViale%20XXIV%20Maggio%2C%2043%2C%2071121%20Foggia%20FG!5e0!3m2!1sit!2sit!4v1665401802691!5m2!1sit!2sit" width="600" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-xl border-2 border-lightblue dark:border-lightorange mb-4" />
+                    <iframe title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2989.8677461982957!2d15.551600315657607!3d41.46378369921818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1339d85c06f435a3%3A0xa599dfedb7f5f68!2sViale%20XXIV%20Maggio%2C%2043%2C%2071121%20Foggia%20FG!5e0!3m2!1sit!2sit!4v1665401802691!5m2!1sit!2sit" width="600" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-xl border-2 border-lightblue dark:border-lightorange mb-4" />
                     <p className="text-lightgrey dark:text-lightorange">Email: nunzioonorati@gmail.com</p>
                     <p className="text-lightgrey dark:text-lightorange">Address: Viale XXIV Maggio 43, Foggia, Italy</p>
                 </div>
