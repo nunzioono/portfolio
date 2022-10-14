@@ -1,4 +1,5 @@
 const Contacts= () => {
+
     return (
         <div className="h-screen mt-[5rem] px-24 dark:bg-dark">
             <h1 className="font-martelbold text-4xl text-grey text-start pt-16 mb-16 dark:text-white">Get in touch!</h1>
@@ -9,20 +10,19 @@ const Contacts= () => {
                         <div className="w-full flex mb-8">
                             <div className="flex-1 mr-8">
                                 <p className="font-khulabold text-lg text-lightblue dark:text-lightorange">Name</p>
-                                <input type="text" className="w-full h-10 p-4 rounded-xl bg-opacity-20 border-2 text-lightblue bg-lightblue border-lightblue placeholder:text-lightblue focus-visible:outline-blue dark:text-lightorange dark:bg-lightorange dark:border-lightorange dark:placeholder:text-lightorange dark:focus-visible:outline-orange dark:bg-opacity-20" placeholder="Type the name"/>
+                                <input id="sendername" type="text" className="w-full h-10 p-4 rounded-xl bg-opacity-20 border-2 text-lightblue bg-lightblue border-lightblue placeholder:text-lightblue focus-visible:outline-blue dark:text-lightorange dark:bg-lightorange dark:border-lightorange dark:placeholder:text-lightorange dark:focus-visible:outline-orange dark:bg-opacity-20" placeholder="Type the name"/>
                             </div>
                             <div className="flex-1">
                                 <p className="font-khulabold text-lg text-lightblue dark:text-lightorange" required>Email</p>
-                                <input type="email" className="w-full h-10 p-4 rounded-xl bg-opacity-20 border-2 text-lightblue bg-lightblue border-lightblue placeholder:text-lightblue focus-visible:outline-blue dark:text-lightorange dark:bg-lightorange dark:border-lightorange dark:placeholder:text-lightorange dark:focus-visible:outline-orange dark:bg-opacity-20" placeholder="Type the email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"/>
+                                <input id="senderemail" type="email" className="w-full h-10 p-4 rounded-xl bg-opacity-20 border-2 text-lightblue bg-lightblue border-lightblue placeholder:text-lightblue focus-visible:outline-blue dark:text-lightorange dark:bg-lightorange dark:border-lightorange dark:placeholder:text-lightorange dark:focus-visible:outline-orange dark:bg-opacity-20" placeholder="Type the email" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}"/>
                             </div>
                         </div>
                         <div className="w-full h-full mb-8">
                             <p className="font-khulabold text-lg text-lightblue dark:text-lightorange" required>Message</p>
-                            <textarea className="w-full h-full p-4 rounded-xl bg-opacity-20 border-2 text-lightblue bg-lightblue border-lightblue placeholder:text-lightblue focus-visible:outline-blue dark:text-lightorange dark:bg-lightorange dark:border-lightorange dark:placeholder:text-lightorange dark:focus-visible:outline-orange dark:bg-opacity-20" placeholder="Type the message"/>
+                            <textarea id="sendermessage" className="w-full h-full p-4 rounded-xl bg-opacity-20 border-2 text-lightblue bg-lightblue border-lightblue placeholder:text-lightblue focus-visible:outline-blue dark:text-lightorange dark:bg-lightorange dark:border-lightorange dark:placeholder:text-lightorange dark:focus-visible:outline-orange dark:bg-opacity-20" placeholder="Type the message"/>
                         </div>
                     </div>
                     <button className="w-full py-2 px-32 rounded-xl font-khulabold text-white bg-lightblue hover:bg-blue dark:bg-lightorange dark:hover:bg-orange">Send message</button>
-
                 </form>
                 <div className="separator flex flex-col items-center">
                     <div className="w-1 h-52 mb-8 rounded bg-lightblue dark:bg-lightorange"></div>

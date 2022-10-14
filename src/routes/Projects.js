@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const Project = (props)=>{
     return (
         <Link key={props.id.toString()} to={"/projects/"+props.id} className={"h-64 m-10 rounded-3xl border-[1px] border-lightblue dark:border-lightorange"+(!props.iconsViewMode?" w-11/12 mx-auto bg-white dark:bg-dark border-1 border-lightblue dark:border-lightorange flex justify-start items-center ":" border-1 border-lightblue overflow-hidden w-72")}>
-            <img src={props.imageBackground} alt="" className={"rounded-2xl "+(props.iconsViewMode?"h-full w-full ":"w-72 h-56 ml-4 shadow-inner shadow-lightblue")}/>
+            <img src={props.imageBackground} alt="" className={"rounded-2xl "+(props.iconsViewMode?"h-full w-full ":"w-72 h-56 shadow-inner shadow-lightblue")}/>
             {props.iconsViewMode && <div className="relative">
                 
                 <div className="absolute bottom-0 rounded-2xl left-0 right-0 bg-gradient-to-t from-grey to-transparent h-64 flex flex-col justify-end items-start opacity-0 hover:opacity-100">
@@ -16,7 +16,7 @@ const Project = (props)=>{
                 </div>
             </div>}
 
-            {!props.iconsViewMode && <div className="relative">
+            {!props.iconsViewMode && <div className="relative ml-4">
                 
                 <div className="">
                     <div className="flex">{props.tags.map(tag=><div className="w-min rounded-md py-1 px-2 text-xs bg-blue dark:bg-lightorange text-white ml-3 mb-1">{tag}</div>)}</div>
@@ -63,9 +63,9 @@ const Projects= () => {
         Full: false
     });
     const darkMode = useSelector(selectDarkTheme);
-    const searchPath = process.env.PUBLIC_URL+(darkMode?"/images/darklens.png":"/images/lens.png");
-    const iconsPath = process.env.PUBLIC_URL+(darkMode?"/images/darkicons.png":"/images/icons.png");
-    const itemsPath = process.env.PUBLIC_URL+(darkMode?"/images/darkitems.png":"/images/items.png");
+    const searchPath = process.env.PUBLIC_URL+(darkMode?"/images/projects_darklens.png":"/images/projects_lens.png");
+    const iconsPath = process.env.PUBLIC_URL+(darkMode?"/images/projects_darkicons.png":"/images/projects_icons.png");
+    const itemsPath = process.env.PUBLIC_URL+(darkMode?"/images/projects_darkitems.png":"/images/projects_items.png");
 
     return (
         <div className="relative h-screen px-24 mt-[5.75rem] flex flex-col dark:bg-dark">

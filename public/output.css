@@ -718,12 +718,12 @@ video {
   height: 100vh;
 }
 
-.h-10 {
-  height: 2.5rem;
-}
-
 .h-full {
   height: 100%;
+}
+
+.h-10 {
+  height: 2.5rem;
 }
 
 .h-52 {
@@ -861,10 +861,6 @@ video {
 
 .justify-between {
   justify-content: space-between;
-}
-
-.justify-around {
-  justify-content: space-around;
 }
 
 .overflow-hidden {
@@ -1095,11 +1091,6 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-blue {
-  --tw-text-opacity: 1;
-  color: rgb(40 94 243 / var(--tw-text-opacity));
-}
-
 .text-lightgrey {
   --tw-text-opacity: 1;
   color: rgb(112 112 112 / var(--tw-text-opacity));
@@ -1108,6 +1099,11 @@ video {
 .text-lightorange {
   --tw-text-opacity: 1;
   color: rgb(255 178 16 / var(--tw-text-opacity));
+}
+
+.text-blue {
+  --tw-text-opacity: 1;
+  color: rgb(40 94 243 / var(--tw-text-opacity));
 }
 
 .placeholder-lightblue::-webkit-input-placeholder {
@@ -1343,70 +1339,6 @@ video {
   src: url("../public/fonts/CormorantInfant-Bold.ttf");
 }
 
-.file\:-ml-4::-webkit-file-upload-button {
-  margin-left: -1rem;
-}
-
-.file\:-ml-4::file-selector-button {
-  margin-left: -1rem;
-}
-
-.file\:mr-4::-webkit-file-upload-button {
-  margin-right: 1rem;
-}
-
-.file\:mr-4::file-selector-button {
-  margin-right: 1rem;
-}
-
-.file\:rounded-l-xl::-webkit-file-upload-button {
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-}
-
-.file\:rounded-l-xl::file-selector-button {
-  border-top-left-radius: 0.75rem;
-  border-bottom-left-radius: 0.75rem;
-}
-
-.file\:border-lightblue::-webkit-file-upload-button {
-  --tw-border-opacity: 1;
-  border-color: rgb(80 124 244 / var(--tw-border-opacity));
-}
-
-.file\:border-lightblue::file-selector-button {
-  --tw-border-opacity: 1;
-  border-color: rgb(80 124 244 / var(--tw-border-opacity));
-}
-
-.file\:bg-lightblue::-webkit-file-upload-button {
-  --tw-bg-opacity: 1;
-  background-color: rgb(80 124 244 / var(--tw-bg-opacity));
-}
-
-.file\:bg-lightblue::file-selector-button {
-  --tw-bg-opacity: 1;
-  background-color: rgb(80 124 244 / var(--tw-bg-opacity));
-}
-
-.file\:bg-opacity-20::-webkit-file-upload-button {
-  --tw-bg-opacity: 0.2;
-}
-
-.file\:bg-opacity-20::file-selector-button {
-  --tw-bg-opacity: 0.2;
-}
-
-.file\:text-lightblue::-webkit-file-upload-button {
-  --tw-text-opacity: 1;
-  color: rgb(80 124 244 / var(--tw-text-opacity));
-}
-
-.file\:text-lightblue::file-selector-button {
-  --tw-text-opacity: 1;
-  color: rgb(80 124 244 / var(--tw-text-opacity));
-}
-
 .placeholder\:text-lightblue::-webkit-input-placeholder {
   --tw-text-opacity: 1;
   color: rgb(80 124 244 / var(--tw-text-opacity));
@@ -1486,44 +1418,6 @@ video {
 
 .dark .dark\:outline-lightorange {
   outline-color: #ffb210;
-}
-
-.dark .dark\:file\:border-lightorange::-webkit-file-upload-button {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 178 16 / var(--tw-border-opacity));
-}
-
-.dark .dark\:file\:border-lightorange::file-selector-button {
-  --tw-border-opacity: 1;
-  border-color: rgb(255 178 16 / var(--tw-border-opacity));
-}
-
-.dark .dark\:file\:bg-lightorange::-webkit-file-upload-button {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 178 16 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:file\:bg-lightorange::file-selector-button {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 178 16 / var(--tw-bg-opacity));
-}
-
-.dark .dark\:file\:bg-opacity-20::-webkit-file-upload-button {
-  --tw-bg-opacity: 0.2;
-}
-
-.dark .dark\:file\:bg-opacity-20::file-selector-button {
-  --tw-bg-opacity: 0.2;
-}
-
-.dark .dark\:file\:text-lightorange::-webkit-file-upload-button {
-  --tw-text-opacity: 1;
-  color: rgb(255 178 16 / var(--tw-text-opacity));
-}
-
-.dark .dark\:file\:text-lightorange::file-selector-button {
-  --tw-text-opacity: 1;
-  color: rgb(255 178 16 / var(--tw-text-opacity));
 }
 
 .dark .dark\:placeholder\:text-lightorange::-webkit-input-placeholder {
