@@ -6,7 +6,6 @@ import {
 
 function Home() {
   const darkTheme = useSelector(selectDarkTheme); 
-  console.log(darkTheme)
   const profilePath = process.env.PUBLIC_URL+"/images/home_body1_leftside_profile.png";
   const rightBodyPath = process.env.PUBLIC_URL+"/images/home_body1_rightside_show1.png";
   const rightBodyPath2 = process.env.PUBLIC_URL+"/images/home_body1_rightside_show2.png";
@@ -15,21 +14,22 @@ function Home() {
   const shadowPath = process.env.PUBLIC_URL+(darkTheme?"/images/home_body1_rightside_darkshadow.png":"/images/home_body1_rightside_shadow.png");
   const mapPath = process.env.PUBLIC_URL+(darkTheme?'/images/home_body2_leftside_darkmap.png':'/images/home_body2_leftside_map.png');
   const indicatorPath = process.env.PUBLIC_URL+(darkTheme?"/images/home_body2_rightside_darkindicator.png":"/images/home_body2_rightside_indicator.png")
+
   return (
     <div className="home w-full mt-18 px-24 z-10 dark:bg-dark">
 
 		<div className="body1 h-screen w-full flex">
 			<div className="left_body h-screen w-1/3 flex flex-col justify-center translate-y-[-3rem]">
 
-				<img src={profilePath} alt="" className="w-12 rounded-full mb-12"/>
+				<img src={profilePath} alt="" className="w-12 h-12 rounded-full mb-12"/>
 				<div>
 					<div className="text-6xl font-martelbold text-semilightgrey mb-10 dark:text-white">
 						A software <span className="text-blue dark:text-lightorange">engineer</span> that <span className="text-blue dark:text-lightorange">designs</span> and <span className="text-blue dark:text-lightorange">developes</span> things
 					</div>
-					<div className="font-khularegular text-semilightgrey w-full mb-10 dark:text-darkgrey">
+					<div className="font-khularegular text-xl text-lightgrey w-full mb-10 dark:text-lightgrey">
 						<span>Hi i'm Nunzio, a software engineer based in Italy. I've degreed in 2023 and growing my interest for design since that.</span>
 					</div>
-					<Link to="/contacts" className="w-full font-martelbold text-white text-center text-lg rounded-lg bg-lightblue hover:bg-blue px-52 py-3 cursor-pointer dark:bg-lightorange dark:hover:bg-orange">
+					<Link to="/contacts" className="w-full font-martelbold text-white text-center text-xl rounded-lg bg-lightblue hover:bg-blue px-52 py-3 cursor-pointer dark:bg-lightorange dark:hover:bg-orange">
 						Contact me
 					</Link>
 				</div>
