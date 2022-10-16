@@ -726,8 +726,16 @@ video {
   height: 2.5rem;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
 .h-52 {
   height: 13rem;
+}
+
+.h-12 {
+  height: 3rem;
 }
 
 .h-min {
@@ -739,16 +747,8 @@ video {
   height: 48rem;
 }
 
-.h-64 {
-  height: 16rem;
-}
-
 .h-56 {
   height: 14rem;
-}
-
-.h-12 {
-  height: 3rem;
 }
 
 .w-1\/4 {
@@ -1060,14 +1060,19 @@ video {
   line-height: 2.5rem;
 }
 
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
 }
 
 .text-6xl {
@@ -1078,11 +1083,6 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-}
-
-.text-2xl {
-  font-size: 1.5rem;
-  line-height: 2rem;
 }
 
 .text-lightblue {
