@@ -1,58 +1,26 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectDarkTheme } from "../slices/themeSlice";
-import { Link } from "react-router-dom";
-
-
-const Project = (props)=>{
-    return (
-        <Link key={props.id.toString()} to={"/projects/"+props.id} className={"h-64 m-10 rounded-3xl border-[1px] border-lightblue dark:border-lightorange"+(!props.iconsViewMode?" w-11/12 mx-auto bg-white dark:bg-dark border-1 border-lightblue dark:border-lightorange flex justify-start items-center ":" border-1 border-lightblue overflow-hidden w-72")}>
-            <img src={props.imageBackground} alt="" className={"rounded-2xl "+(props.iconsViewMode?"h-full w-full ":"w-72 h-56 shadow-inner shadow-lightblue")}/>
-            {props.iconsViewMode && <div className="relative">
-                
-                <div className="absolute bottom-0 rounded-2xl left-0 right-0 bg-gradient-to-t from-grey to-transparent h-64 flex flex-col justify-end items-start opacity-0 hover:opacity-100">
-                    <div className="flex">{props.tags.map(tag=><div className="rounded-md py-1 px-2 text-xs bg-blue dark:bg-lightorange text-white ml-3 mb-1">{tag}</div>)}</div>
-                    <h1 className="font-khulabold text-white text-xl ml-3 mb-2">{props.name}</h1>
-                </div>
-            </div>}
-
-            {!props.iconsViewMode && <div className="relative ml-4">
-                
-                <div className="">
-                    <div className="flex">{props.tags.map(tag=><div className="w-min rounded-md py-1 px-2 text-xs bg-blue dark:bg-lightorange text-white ml-3 mb-1">{tag}</div>)}</div>
-                    <h1 className="font-martelbold text-grey dark:text-white text-xl ml-3 mb-2">{props.name}</h1>
-                    <p className="font-khularegular text-lightgrey ml-3">{props.description}</p>
-                </div>
-            </div>}
-        </Link>
-    );
-}
+import { db } from "../firebase";
+import { onSnapshot, collection, query } from "firebase/firestore";
+import ProjectCard from "../components/ProjectCard";
 
 const Projects= () => {
-    const projects = [
-        {
-            id: 1,
-            name: "Focus Consulting srl",
-            description: "Applicazione web per un'azienda ingegneristica di consulenza",
-            tags: ["Web"],
-            imageBackground: "/images/home_body1_rightside_show1.png"
-        },
-        {
-            id: 2,
-            name: "Focus Consulting srl",
-            description: "Applicazione web per un'azienda ingegneristica di consulenza",
-            tags: ["Mobile"],
-            imageBackground: "/images/home_body1_rightside_show1.png"
-        },
-        {
-            id: 3,
-            name: "bro bravo",
-            description: "Applicazione web per un'azienda ingegneristica di consulenza",
-            tags: ["Desktop"],
-            imageBackground: "/images/home_body1_rightside_show1.png"
-        },
-    ]
-
+    const [projects, setProjects] = useState([]);
+    const q = query(collection(db, "projects"));
+    useEffect(() => { 
+           const unsubscribe = onSnapshot(q,snap => {
+             const data = snap.docs.map(doc => {
+                let item=doc.data()
+                item.id=doc.id
+                return item
+            })
+             setProjects(data)
+           });
+    
+           //remember to unsubscribe from your realtime listener on unmount or you will create a memory leak
+           return () => unsubscribe()
+    }, []);
     const [ iconsViewMode, setIconsViewMode ] = useState(true);
     const [ searched, setSearched ] = useState("");
     const [ filters, setFilters ] = useState({
@@ -164,20 +132,20 @@ const Projects= () => {
             </div>
             <div className={"projects flex flex-1 mt-8 overflow-y-scroll border-2 border-blue bg-lightblue dark:bg-lightorange bg-opacity-20 dark:bg-opacity-20 dark:border-lightorange rounded-xl p-2 mb-5 "+(!iconsViewMode?"justify-start flex-col ":"")}>
                 {
-                    projects
+                    projects!==undefined && projects
                     .filter((proj)=>{
-                        console.log(Object.keys(filters).filter(filterkey=>filters[filterkey]))
-                        
                         return proj.name.toLowerCase().includes(searched.toLowerCase()) && 
                         (Object.keys(filters).filter(filterkey=>filters[filterkey])[0]===undefined || proj.tags.indexOf(Object.keys(filters).filter(filterkey=>filters[filterkey])[0])!==-1)
                     })
-                    .map((proj)=>{return (
-                        <Project  
+                    .map((proj,i)=>{
+                        return (
+                        <ProjectCard
+                            key={proj.id}  
                             id={proj.id} 
                             iconsViewMode={iconsViewMode} 
                             name={proj.name} 
                             description={proj.description} 
-                            tags={proj.tags} 
+                            tags={proj.tags}
                             imageBackground={proj.imageBackground}
                         />
                         )

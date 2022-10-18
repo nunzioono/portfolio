@@ -1,4 +1,29 @@
+import { db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 const Contacts= () => {
+
+    const sendEmail = async () => {
+        const name = document.getElementById("sendername").value;
+        const email = document.getElementById("senderemail").value;
+        const message = document.getElementById("sendermessage").value;
+
+        if(name && email && message){
+            const mailCollection=collection(db,'mail')
+            await addDoc(mailCollection,{
+                to: 'nunzioonorati@gmail.com',
+                message: {
+                subject: 'info on projects from '+name,
+                text: message+"\nYou can find me at "+email,
+                html: message+"<br/>You can find me at "+email,
+                },
+            })
+
+            document.getElementById("sendername").value="";
+            document.getElementById("senderemail").value="";
+            document.getElementById("sendermessage").value="";
+        }
+
+    }
 
     return (
         <div className="h-screen mt-[5rem] px-24 dark:bg-dark">
@@ -22,7 +47,10 @@ const Contacts= () => {
                             <textarea id="sendermessage" className="w-full h-64 p-4 rounded-xl bg-opacity-20 border-2 text-lightblue bg-lightblue border-lightblue placeholder:text-lightblue focus-visible:outline-blue dark:text-lightorange dark:bg-lightorange dark:border-lightorange dark:placeholder:text-lightorange dark:focus-visible:outline-orange dark:bg-opacity-20" placeholder="Type the message"/>
                         </div>
                     </div>
-                    <button className="w-full py-2 px-32 rounded-xl text-xl font-khulabold text-white text-center bg-lightblue hover:bg-blue dark:bg-lightorange dark:hover:bg-orange">Send message</button>
+                    <button onClick={(e)=>{
+                        e.preventDefault();
+                        sendEmail();
+                    }} className="w-full py-2 px-32 rounded-xl text-xl font-khulabold text-white text-center bg-lightblue hover:bg-blue dark:bg-lightorange dark:hover:bg-orange">Send message</button>
                 </form>
                 <div className="separator flex flex-col items-center">
                     <div className="w-1 h-52 mb-8 rounded bg-lightblue dark:bg-lightorange"></div>
