@@ -20,7 +20,7 @@ const Projects= () => {
     
            //remember to unsubscribe from your realtime listener on unmount or you will create a memory leak
            return () => unsubscribe()
-    }, []);
+    }, [q]);
     const [ iconsViewMode, setIconsViewMode ] = useState(true);
     const [ searched, setSearched ] = useState("");
     const [ filters, setFilters ] = useState({

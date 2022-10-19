@@ -3,6 +3,7 @@
 #production
 /build
 /.firebase
+.env
 .firebaserc
 firebase.json
 
