@@ -945,11 +945,6 @@ video {
   background-color: rgb(6 53 180 / var(--tw-bg-opacity));
 }
 
-.bg-\[\#E6FAEE\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(230 250 238 / var(--tw-bg-opacity));
-}
-
 .bg-opacity-20 {
   --tw-bg-opacity: 0.2;
 }
@@ -966,22 +961,6 @@ video {
 
 .to-transparent {
   --tw-gradient-to: transparent;
-}
-
-.object-contain {
-  object-fit: contain;
-}
-
-.object-fill {
-  object-fit: fill;
-}
-
-.object-none {
-  object-fit: none;
-}
-
-.object-scale-down {
-  object-fit: scale-down;
 }
 
 .p-4 {
@@ -1071,6 +1050,10 @@ video {
   font-family: Cormorant Infant Bold;
 }
 
+.font-cormorantregular {
+  font-family: Cormorant Infant Regular;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -1098,6 +1081,16 @@ video {
 
 .text-6xl {
   font-size: 3.75rem;
+  line-height: 1;
+}
+
+.text-9xl {
+  font-size: 8rem;
+  line-height: 1;
+}
+
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
