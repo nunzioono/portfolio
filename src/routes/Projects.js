@@ -36,23 +36,23 @@ const Projects= () => {
     const itemsPath = process.env.PUBLIC_URL+(darkMode?"/images/projects_darkitems.png":"/images/projects_items.png");
 
     return (
-        <div className="relative h-screen px-24 mt-[5.75rem] flex flex-col dark:bg-dark">
-            <div className="controls flex justify-between mt-16">
-                <div className="searchbar relative flex justify-end items-center">
+        <div className="relative h-screen px-8 pt-8 flex flex-col dark:bg-dark">
+            <div className="controls flex flex-col justify-between mt-16">
+                <div className="h-10 relative flex justify-end items-center mb-4">
                     <input type="text" className="w-64 h-10 rounded-xl p-2 border-2 font-cormorantbold text-lightblue border-lightblue bg-opacity-20 bg-lightblue outline-lightblue placeholder-lightblue
                       dark:text-lightorange dark:border-lightorange dark:bg-opacity-20 dark:bg-lightorange dark:outline-lightorange dark:placeholder-lightorange" placeholder="Search by name" onChange={(e)=>{
                         setSearched(e.currentTarget.value);
                       }}/>
                     <img src={searchPath} alt="" className="absolute right-0 top-1/2 -translate-y-1/2 -translate-x-1/2"/>
                 </div>
-                <div className="relative h-10 rounded-xl border-2 border-lightblue bg-opacity-20 bg-lightblue flex overflow-clip dark:bg-lightorange dark:bg-opacity-20 dark:border-lightorange " onClick={
+                <div className="hidden relative h-10 rounded-xl border-2 border-lightblue bg-opacity-20 bg-lightblue overflow-clip dark:bg-lightorange dark:bg-opacity-20 dark:border-lightorange " onClick={
                     ()=>{setIconsViewMode(!iconsViewMode)}
                 }>
                     <img src={iconsPath} alt="" className="p-1.5 mr-2 after:w-1/2 z-10"/>
                     <div className={"absolute top-0 bottom-0 h-full w-1/2 bg-darkblue z-0 transition-all dark:bg-orange "+(iconsViewMode?"left-0":"right-0")}></div>
                     <img src={itemsPath} alt="" className="p-1.5 z-10"/>
                 </div>
-                <select className="px-2 bg-lightblue bg-opacity-20 rounded-xl border-2 border-lightblue
+                <select className="h-10 px-2 bg-lightblue bg-opacity-20 rounded-xl border-2 border-lightblue
                  outline-blue appearance-none font-cormorantbold text-lightblue
                  dark:bg-lightorange dark:bg-opacity-20 dark:border-lightorange dark:outline-lightorange dark:text-lightorange
                  " onChange={(e)=>{
@@ -130,7 +130,7 @@ const Projects= () => {
                     <option value={5}>Full</option>
                 </select>
             </div>
-            <div className={"projects flex flex-1 mt-8 overflow-y-scroll border-2 border-blue bg-lightblue dark:bg-lightorange bg-opacity-20 dark:bg-opacity-20 dark:border-lightorange rounded-xl p-2 mb-5 "+(!iconsViewMode?"justify-start flex-col ":"")}>
+            <div className={"flex flex-wrap flex-1 mt-8 overflow-y-scroll border-2 border-blue bg-lightblue dark:bg-lightorange bg-opacity-20 dark:bg-opacity-20 dark:border-lightorange rounded-xl p-2 mb-14 "+(!iconsViewMode?"justify-start flex-col ":"")}>
                 {
                     projects!==undefined && projects
                     .filter((proj)=>{

@@ -16,42 +16,42 @@ function Home() {
   const indicatorPath = process.env.PUBLIC_URL+(darkTheme?"/images/home_body2_rightside_darkindicator.png":"/images/home_body2_rightside_indicator.png")
 
   return (
-    <div className="home w-full mt-18 px-24 z-10 dark:bg-dark">
+    <div className="home w-full pt-44 px-8 z-10 dark:bg-dark">
 
-		<div className="body1 h-screen w-full flex">
-			<div className="left_body h-screen w-1/3 flex flex-col justify-center translate-y-[-3rem]">
+		<div className="body1 h-screen w-full md:flex">
+			<div className="left_body h-screen">
 
-				<img src={profilePath} alt="" className="w-12 h-12 rounded-full mb-12"/>
+				<img src={profilePath} alt="" className="w-8 h-8 rounded-full mb-8"/>
 				<div>
-					<div className="text-6xl font-martelbold text-semilightgrey mb-10 dark:text-white">
-						A software <span className="text-blue dark:text-lightorange">engineer</span> that <span className="text-blue dark:text-lightorange">designs</span> and <span className="text-blue dark:text-lightorange">developes</span> things
+					<div className="text-4xl text-semilightgrey font-martelbold mb-10 dark:text-white">
+						A software <span className="text-blue dark:text-lightorange">engineer</span> that <span className="text-blue dark:text-lightorange">designs</span><br/> and <span className="text-blue dark:text-lightorange">developes</span> things
 					</div>
-					<div className="font-khularegular text-xl text-lightgrey w-full mb-10 dark:text-lightgrey">
+					<div className="font-khularegular text-xl lg:text-lg md:text-lg  text-lightgrey w-full mb-10 dark:text-lightgrey">
 						<span>Hi i'm Nunzio, a software engineer based in Italy. I've degreed in 2023 and growing my interest for design since that.</span>
 					</div>
-					<Link to="/contacts" className="w-full font-martelbold text-white text-center text-xl rounded-lg bg-lightblue hover:bg-blue px-52 py-3 cursor-pointer dark:bg-lightorange dark:hover:bg-orange">
+					<Link to="/contacts" className="w-full text-xl font-martelbold text-white text-center rounded-lg bg-lightblue px-20 py-3 hover:bg-blue lg:px-24 md:px-24 lg:py-3 md:py-2 cursor-pointer dark:bg-lightorange dark:hover:bg-orange">
 						Contact me
 					</Link>
 				</div>
 					
 			</div>
-			<div className="relative right_body h-screen w-2/3 flex justify-center items-center">
+			<div className="relative hidden right_body flex justify-center items-center lg:block lg:h-screen lg:w-2/3 ">
 
-				<img src={shadowPath} alt="" className='absolute w-66 w-66 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0'/>
+				<img src={shadowPath} alt="" className='absolute lg:w-[46rem] lg:h-[46rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0'/>
 
 				<div className='h-min z-10'>
 
 					<div className='flex'>
 
-						<img src={rightBodyPath} alt="" className='home_show -mr-8 z-40'/>
+						<img src={rightBodyPath} alt="" className='home_show lg:-mr-4 md:-mr-6 z-40'/>
 							
 						<img src={rightBodyPath2} alt="" className='home_show z-30'/>
 
 					</div>
 						
-					<div className='flex z-0 -mt-8'>
+					<div className='flex z-0 lg:-mt-4 md:-mt-6'>
 					
-						<img src={rightBodyPath3} alt="" className='home_show -mr-8 z-30'/>
+						<img src={rightBodyPath3} alt="" className='home_show lg:-mr-4 md:-mr-6 z-30'/>
 							
 						<img src={rightBodyPath4} alt="" className='home_show z-20'/>	
 					
@@ -63,17 +63,17 @@ function Home() {
 			
 		</div>
 
-        <div className='body2 h-screen w-full flex justify-between items-center  dark:bg-dark'>
+        <div className='body2 w-full flex flex-col-reverse justify-between dark:bg-dark'>
 			
-			<div className='left_body flex justify-start'>
-				<img src={mapPath} alt='' className='h-[48rem] w-auto' />
+			<div className='left_body flex justify-start mb-48'>
+				<img src={mapPath} alt='' className='mb-8' />
 			</div>
 			
-			<div className='right_body w-1/2 flex justify-end'>
+			<div className='right_body w-full h-screen flex flex-row-reverse justify-between items-center mb-8'>
 
-				<div className='h-[48rem] w-[36rem] flex flex-col justify-between items-center'>
+				<div className='h-3/4 flex flex-col justify-between items-center p-8 mb-10'>
 					<div id="Step1">
-						<div className='flex flex-col justify-center items-center'>
+						<div className='flex flex-col'>
 							<div className='home_body2_title'>
 								Born in Foggia, stayed there till 18
 							</div>
@@ -85,7 +85,7 @@ function Home() {
 					</div>
 	
 					<div id="Step2">
-						<div className='flex flex-col justify-center items-center'>
+						<div className='flex flex-col'>
 							<div className='home_body2_title'>
 								<span>Transfered to Turin</span>
 							</div>
@@ -96,7 +96,7 @@ function Home() {
 					</div>
 
 					<div id="Step3">
-						<div className='flex flex-col justify-center items-center'>
+						<div className='flex flex-col'>
 							<div className='home_body2_title'>
 								<span>Getting to work</span>
 							</div>
@@ -107,7 +107,7 @@ function Home() {
 					</div>				
 				</div>
 
-				<img src={indicatorPath} alt="" className='ml-16' />
+				<img src={indicatorPath} alt="" className='h-[40rem] w-auto mr-2' />
 
 			</div>
 

@@ -34,11 +34,11 @@
 
 @layer components {
     .navbar {
-        @apply fixed top-0 left-0 right-0 flex justify-between items-center px-24 py-6 bg-white dark:bg-dark;
+        @apply fixed top-0 left-0 right-0  px-8 py-3 bg-white dark:bg-dark;
     }
 
     .nav {
-        @apply bg-transparent rounded text-grey text-center font-cormorantregular text-xl py-2 px-8 mx-2 hover:bg-lightblue hover:text-white dark:text-lightorange dark:hover:bg-lightorange dark:hover:text-white;
+        @apply bg-transparent rounded text-grey text-center font-cormorantregular text-base hover:bg-lightblue hover:text-white dark:text-lightorange dark:hover:bg-lightorange dark:hover:text-white;
     }
 
     .nav.active {
@@ -46,19 +46,19 @@
     }
 
     .home_show {
-        @apply w-72 h-72 transition-transform hover:scale-125 hover:rotate-0 hover:z-50 rounded-3xl shadow-sm shadow-lightblue dark:shadow-lightorange rotate-12
+        @apply lg:w-48 lg:h-48 md:w-44 md:h-44 transition-transform hover:scale-125 hover:rotate-0 hover:z-50 rounded-3xl shadow-sm shadow-lightblue dark:shadow-lightorange rotate-12
     }
 
     .home_body2_title {
-        @apply font-martelbold text-grey text-3xl mb-4 dark:text-white
+        @apply font-martelbold text-grey dark:text-white text-center text-xl
     }
 
     .home_body2_desc {
-        @apply font-khularegular text-lightgrey text-xl
+        @apply font-khularegular text-lightgrey text-center text-base
     }
 
     .footer {
-        @apply flex justify-between items-center px-24 py-6 bg-white dark:bg-dark
+        @apply flex flex-col justify-between items-center px-8 py-3 bg-white dark:bg-dark
     }
 
     .footer_social_icon {

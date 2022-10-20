@@ -15,7 +15,7 @@ const ProjectCard = (props)=>{
     })
 
     return (        
-        <Link key={props.id} to={"/projects/"+props.id} className={"h-64 m-10 rounded-3xl border-[1px] border-lightblue dark:border-lightorange"+(!props.iconsViewMode?" w-11/12 mx-auto bg-white dark:bg-dark border-1 border-lightblue dark:border-lightorange flex justify-start items-center ":" border-1 border-lightblue overflow-hidden w-72")}>
+        <Link key={props.id} to={"/projects/"+props.id} className={"h-48 w-48 m-10 rounded-3xl border-[1px] border-lightblue dark:border-lightorange"+(!props.iconsViewMode?" w-11/12 mx-auto bg-white dark:bg-dark border-1 border-lightblue dark:border-lightorange flex justify-start items-center ":" border-1 border-lightblue overflow-hidden w-72")}>
             <img id={"imageCard"+props.id} alt="" className={"rounded-2xl "+(props.iconsViewMode?"h-full w-full ":"w-72 h-56 shadow-inner shadow-lightblue")}/>
             {props.iconsViewMode && <div className="relative">
                 <div className="absolute bottom-0 rounded-2xl left-0 right-0 bg-gradient-to-t from-grey to-transparent h-64 flex flex-col justify-end items-start opacity-0 hover:opacity-100">

@@ -25,9 +25,9 @@ function Switch() {
 			dispatch(invert());
 		}}>
 			
-			<img src={moonPath} alt="" className={(darkTheme?'hidden ':'')+'h-8 '} />
+			<img src={moonPath} alt="" className={(darkTheme?'hidden ':'')+'h-6 '} />
 
-			<img src={sunPath} alt="" className={(!darkTheme?'hidden ':'')+'h-8 '}/>			
+			<img src={sunPath} alt="" className={(!darkTheme?'hidden ':'')+'h-6 '}/>			
 
 		</div>
 	);
@@ -42,11 +42,57 @@ function Navbar() {
   
   return (
     <div className="navbar z-50">
+		<div className='flex justify-between items-center'>
+			<div className='h-5 w-6 flex flex-col justify-between outline-lightblue' onClick={
+					()=>{
+						const mobilemenu= document.getElementById("mobile-menu");
+						if(mobilemenu.classList.contains("hidden")){
+							mobilemenu.classList.remove("hidden")
+						}
+						else{
+							mobilemenu.classList.add("hidden")
+						}
+					}
+				}>
+				<span className='w-full h-1 rounded bg-lightblue dark:bg-lightorange'></span>
+				<span className='w-full h-1 rounded bg-lightblue dark:bg-lightorange'></span>
+				<span className='w-full h-1 rounded bg-lightblue dark:bg-lightorange'></span>
+			</div>
+			
 
-		<div className="flex flex-row justify-between items-center" >
 
-			<img src={logoPath} alt="" className="h-8 mr-8"/>
+			<div className="hidden flex flex-row justify-between items-center" >
 
+				<img src={logoPath} alt="" className="hidden h-8 mr-8"/>
+
+				<div className={"nav "+((path==="/" || path==="/home")?"active":"")}>
+					<Link to={"/"}>Home</Link>
+				</div>
+
+				<div className={"nav "+(path==="/contacts"?"active":"")}>
+					<Link to={"/contacts"}>Contacts</Link>
+				</div>
+
+				<div className={"nav "+(path==="/projects"?"active":"")}>
+					<Link to={"/projects"}>Projects</Link>
+				</div>
+
+			</div>
+
+			<img src={logoPath} alt="" className="h-6"/>
+
+			<div className="hidden settings flex">
+
+				<Switch />
+
+				<img src={userLoginPath} alt="" className='h-8 ml-8' />
+				
+			</div>
+			<img src={userLoginPath} alt="" className='h-6' />
+
+		</div>
+		<div id='mobile-menu' className='hidden flex flex-col justify-between mt-8'>
+			<Switch />
 			<div className={"nav "+((path==="/" || path==="/home")?"active":"")}>
 				<Link to={"/"}>Home</Link>
 			</div>
@@ -58,17 +104,7 @@ function Navbar() {
 			<div className={"nav "+(path==="/projects"?"active":"")}>
 				<Link to={"/projects"}>Projects</Link>
 			</div>
-
 		</div>
-
-		<div className="settings flex">
-
-			<Switch />
-
-			<img src={userLoginPath} alt="" className='h-8 ml-8' />
-			
-		</div>
-
 	</div>
   );
 }
