@@ -16,28 +16,28 @@ function Home() {
   const indicatorPath = process.env.PUBLIC_URL+(darkTheme?"/images/home_body2_rightside_darkindicator.png":"/images/home_body2_rightside_indicator.png")
 
   return (
-    <div className="home w-full pt-44 px-8 z-10 dark:bg-dark">
+    <div className="w-full pt-44 px-8 z-10 dark:bg-dark lg:mx-8">
 
 		<div className="body1 h-screen w-full md:flex">
-			<div className="left_body h-screen">
+			<div className="h-screen lg:w-1/2">
 
 				<img src={profilePath} alt="" className="w-8 h-8 rounded-full mb-8"/>
 				<div>
 					<div className="text-4xl text-semilightgrey font-martelbold mb-10 dark:text-white">
 						A software <span className="text-blue dark:text-lightorange">engineer</span> that <span className="text-blue dark:text-lightorange">designs</span><br/> and <span className="text-blue dark:text-lightorange">developes</span> things
 					</div>
-					<div className="font-khularegular text-xl lg:text-lg md:text-lg  text-lightgrey w-full mb-10 dark:text-lightgrey">
+					<div className="font-khularegular text-lg lg:text-lg md:text-lg  text-lightgrey w-full mb-10 dark:text-lightgrey">
 						<span>Hi i'm Nunzio, a software engineer based in Italy. I've degreed in 2023 and growing my interest for design since that.</span>
 					</div>
-					<Link to="/contacts" className="w-full text-xl font-martelbold text-white text-center rounded-lg bg-lightblue px-20 py-3 hover:bg-blue lg:px-24 md:px-24 lg:py-3 md:py-2 cursor-pointer dark:bg-lightorange dark:hover:bg-orange">
+					<Link to="/contacts" className="w-full text-xl font-martelbold text-white text-center rounded-lg bg-lightblue px-20 py-3 hover:bg-blue lg:text-lg lg:px-20 md:px-24 lg:py-3 md:py-2 cursor-pointer dark:bg-lightorange dark:hover:bg-orange">
 						Contact me
 					</Link>
 				</div>
 					
 			</div>
-			<div className="relative hidden right_body flex justify-center items-center lg:block lg:h-screen lg:w-2/3 ">
+			<div className="relative hidden lg:justify-center lg:items-start lg:flex lg:h-screen lg:w-1/2 ">
 
-				<img src={shadowPath} alt="" className='absolute lg:w-[46rem] lg:h-[46rem] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-0'/>
+				<img src={shadowPath} alt="" className='absolute lg:w-[20rem] lg:h-[20rem] top-0 left-1/2 -translate-x-1/2 z-0'/>
 
 				<div className='h-min z-10'>
 
@@ -63,13 +63,13 @@ function Home() {
 			
 		</div>
 
-        <div className='body2 w-full flex flex-col-reverse justify-between dark:bg-dark'>
+        <div className='body2 w-full flex flex-col-reverse justify-between dark:bg-dark lg:flex-row-reverse lg:items-center'>
 			
-			<div className='left_body flex justify-start mb-48'>
-				<img src={mapPath} alt='' className='mb-8' />
+			<div className='w-full flex justify-center mb-48 lg:mb-8'>
+				<img src={mapPath} alt='' className='mb-8 md:w-3/4 lg:mb-0' />
 			</div>
 			
-			<div className='right_body w-full h-screen flex flex-row-reverse justify-between items-center mb-8'>
+			<div className='w-full h-screen flex flex-row-reverse justify-between items-center mb-8  lg:w-1/2'>
 
 				<div className='h-3/4 flex flex-col justify-between items-center p-8 mb-10'>
 					<div id="Step1">

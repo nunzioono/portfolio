@@ -14,7 +14,7 @@ function Footer() {
 
   return (
 	<div id="Footer" className="footer">
-		<div className="flex justify-between w-full px-3 mb-3">
+		<div className="flex justify-between w-full px-3 mb-3 md:w-3/4">
 
 			<a href="https://twitter.com/NunzioonoDev" ><img src={twitterPath} alt="" className="footer_social_icon" /></a>
 

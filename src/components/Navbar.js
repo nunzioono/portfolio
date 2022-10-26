@@ -25,9 +25,9 @@ function Switch() {
 			dispatch(invert());
 		}}>
 			
-			<img src={moonPath} alt="" className={(darkTheme?'hidden ':'')+'h-6 '} />
+			<img src={moonPath} alt="" className={(darkTheme?'hidden ':'')+'h-6 lg:h-8'} />
 
-			<img src={sunPath} alt="" className={(!darkTheme?'hidden ':'')+'h-6 '}/>			
+			<img src={sunPath} alt="" className={(!darkTheme?'hidden ':'')+'h-6 lg:h-8'}/>			
 
 		</div>
 	);
@@ -43,7 +43,7 @@ function Navbar() {
   return (
     <div className="navbar z-50">
 		<div className='flex justify-between items-center'>
-			<div className='h-5 w-6 flex flex-col justify-between outline-lightblue' onClick={
+			<div className='h-5 w-6 flex flex-col justify-between outline-lightblue lg:hidden' onClick={
 					()=>{
 						const mobilemenu= document.getElementById("mobile-menu");
 						if(mobilemenu.classList.contains("hidden")){
@@ -61,9 +61,9 @@ function Navbar() {
 			
 
 
-			<div className="hidden flex flex-row justify-between items-center" >
+			<div className="hidden flex flex-row justify-between items-center lg:flex lg:w-96" >
 
-				<img src={logoPath} alt="" className="hidden h-8 mr-8"/>
+				<img src={logoPath} alt="" className="hidden h-8 mr-8 lg:block"/>
 
 				<div className={"nav "+((path==="/" || path==="/home")?"active":"")}>
 					<Link to={"/"}>Home</Link>
@@ -79,16 +79,16 @@ function Navbar() {
 
 			</div>
 
-			<img src={logoPath} alt="" className="h-6"/>
+			<img src={logoPath} alt="" className="h-6 lg:hidden"/>
 
-			<div className="hidden settings flex">
+			<div className="hidden settings flex lg:flex">
 
 				<Switch />
 
 				<img src={userLoginPath} alt="" className='h-8 ml-8' />
 				
 			</div>
-			<img src={userLoginPath} alt="" className='h-6' />
+			<img src={userLoginPath} alt="" className='h-6 lg:hidden' />
 
 		</div>
 		<div id='mobile-menu' className='hidden flex flex-col justify-between mt-8'>

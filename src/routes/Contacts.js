@@ -27,10 +27,11 @@ const Contacts= () => {
     }
 
     return (
-        <div className="pt-22  px-8 dark:bg-dark">
+        <div className="pt-22  px-8 dark:bg-dark lg:mx-8">
             <h1 className="font-martelbold text-4xl text-grey text-start pt-16 mb-16 dark:text-white">Get in touch!</h1>
-            <div className="content flex flex-col justify-center items-start">
-                <form className="h-screen w-full flex flex-col justify-start items-start">
+
+            <div className="content flex flex-col justify-center items-start lg:flex-row">
+                <form className="h-screen w-full flex flex-col justify-start items-start lg:mr-4">
                     <h2 className="font-martelbold text-3xl text-grey mb-8 dark:text-white">Write me your idea:</h2>
                     <div className="w-full">
                         <div className="w-full flex mb-8">
@@ -53,10 +54,10 @@ const Contacts= () => {
                         sendEmail();
                     }} className="w-full py-1 px-20 rounded-xl text-xl font-khulabold text-white text-center bg-lightblue hover:bg-blue dark:bg-lightorange dark:hover:bg-orange">Send message</button>
                 </form>
-                <div className="hidden w-full flex flex-row justify-between items-center">
-                    <div className="w-48 h-1 rounded bg-lightblue dark:bg-lightorange"></div>
+                <div className="hidden w-full flex-row justify-between items-center lg:flex lg:flex-col">
+                    <div className="w-48 h-1 rounded bg-lightblue dark:bg-lightorange lg:w-1 lg:h-48 lg:mb-4"></div>
                     <p className="font-martelbold text-3xl text-center dark:text-white">OR</p>
-                    <div className="w-48 h-1 rounded bg-lightblue dark:bg-lightorange"></div>
+                    <div className="w-48 h-1 rounded bg-lightblue dark:bg-lightorange lg:w-1 lg:h-48 lg:mt-4"></div>
                 </div>
                 <div className="h-screen right-side w-full flex flex-col justify-start items-start">
                     <h3 className="font-martelbold text-3xl text-grey mb-8 dark:text-white">Reach me on my contacts:</h3>

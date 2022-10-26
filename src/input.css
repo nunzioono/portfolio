@@ -34,11 +34,11 @@
 
 @layer components {
     .navbar {
-        @apply fixed top-0 left-0 right-0  px-8 py-3 bg-white dark:bg-dark;
+        @apply fixed top-0 left-0 right-0 px-8 py-3 bg-white dark:bg-dark lg:mx-8;
     }
 
     .nav {
-        @apply bg-transparent rounded text-grey text-center font-cormorantregular text-base hover:bg-lightblue hover:text-white dark:text-lightorange dark:hover:bg-lightorange dark:hover:text-white;
+        @apply bg-transparent rounded text-grey text-center font-cormorantregular text-base hover:bg-lightblue hover:text-white dark:text-lightorange dark:hover:bg-lightorange dark:hover:text-white lg:text-lg lg:px-3 lg:py-1;
     }
 
     .nav.active {
@@ -46,7 +46,7 @@
     }
 
     .home_show {
-        @apply lg:w-48 lg:h-48 md:w-44 md:h-44 transition-transform hover:scale-125 hover:rotate-0 hover:z-50 rounded-3xl shadow-sm shadow-lightblue dark:shadow-lightorange rotate-12
+        @apply lg:w-40 lg:h-40 md:w-44 md:h-44 transition-transform hover:scale-125 hover:rotate-0 hover:z-50 rounded-3xl shadow-sm shadow-lightblue dark:shadow-lightorange rotate-12
     }
 
     .home_body2_title {
