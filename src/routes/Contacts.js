@@ -28,7 +28,7 @@ const Contacts= () => {
 
     return (
         <div className="pt-22  px-8 dark:bg-dark lg:mx-8">
-            <h1 className="font-martelbold text-4xl text-grey text-start pt-16 mb-16 dark:text-white">Get in touch!</h1>
+            <h1 className="font-martelbold text-4xl text-grey text-start pt-24 mb-16 dark:text-white">Get in touch!</h1>
 
             <div className="content flex flex-col justify-center items-start lg:flex-row">
                 <form className="h-screen w-full flex flex-col justify-start items-start lg:mr-4">
