@@ -7,20 +7,11 @@ import ProjectCard from "../components/ProjectCard";
 
 const Projects= () => {
     const [projects, setProjects] = useState([]);
-    const q = query(collection(db, "projects"));
     useEffect(() => { 
-           const unsubscribe = onSnapshot(q,snap => {
-             const data = snap.docs.map(doc => {
-                let item=doc.data()
-                item.id=doc.id
-                return item
-            })
-             setProjects(data)
-           });
-    
-           //remember to unsubscribe from your realtime listener on unmount or you will create a memory leak
-           return () => unsubscribe()
-    }, [q]);
+
+        setProjects(data)
+        return;
+    }, []);
     const [ iconsViewMode, setIconsViewMode ] = useState(true);
     const [ searched, setSearched ] = useState("");
     const [ filters, setFilters ] = useState({
@@ -36,7 +27,7 @@ const Projects= () => {
     const itemsPath = process.env.PUBLIC_URL+(darkMode?"/images/projects_darkitems.png":"/images/projects_items.png");
 
     return (
-        <div className="relative h-screen px-8 pt-8 flex flex-col dark:bg-dark lg:mx-8">
+        <div className="relative h-screen px-8 pt-8 flex flex-col dark:bg-dark lg:px-16 xl:px-32">
             <div className="flex flex-col justify-between mt-16 lg:w-full lg:px-2 lg:flex-row">
                 <div className="w-full h-10 relative flex justify-end items-center mb-4 lg:w-min">
                     <input type="text" className="w-full h-10 rounded-xl p-2 border-2 font-cormorantbold text-lightblue border-lightblue bg-opacity-20 bg-lightblue outline-lightblue placeholder-lightblue

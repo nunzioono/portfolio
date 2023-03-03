@@ -27,7 +27,7 @@ const Contacts= () => {
     }
 
     return (
-        <div className="pt-22  px-8 dark:bg-dark lg:mx-8">
+        <div className="pt-22  px-8 dark:bg-dark lg:px-16 xl:px-32">
             <h1 className="font-martelbold text-4xl text-grey text-start pt-24 mb-16 dark:text-white">Get in touch!</h1>
 
             <div className="content flex flex-col justify-center items-start lg:flex-row">
