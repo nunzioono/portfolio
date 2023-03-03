@@ -34,7 +34,7 @@
 
 @layer components {
     .navbar {
-        @apply fixed top-0 left-0 right-0 px-8 py-3 bg-white dark:bg-dark lg:mx-8;
+        @apply fixed top-0 left-0 right-0 px-8 py-3 bg-white dark:bg-dark lg:px-16 xl:px-32;
     }
 
     .nav {

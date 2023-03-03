@@ -868,14 +868,6 @@ video {
   overflow: clip;
 }
 
-.overflow-x-hidden {
-  overflow-x: hidden;
-}
-
-.overflow-x-clip {
-  overflow-x: clip;
-}
-
 .overflow-y-scroll {
   overflow-y: scroll;
 }
@@ -1019,8 +1011,8 @@ video {
   padding-right: 6rem;
 }
 
-.pt-16 {
-  padding-top: 4rem;
+.pt-24 {
+  padding-top: 6rem;
 }
 
 .pt-44 {
@@ -1029,10 +1021,6 @@ video {
 
 .pt-8 {
   padding-top: 2rem;
-}
-
-.pt-24 {
-  padding-top: 6rem;
 }
 
 .text-center {
@@ -1198,8 +1186,15 @@ video {
 
 @media (min-width: 1024px) {
   .navbar {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navbar {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 }
 
@@ -1681,6 +1676,11 @@ video {
     justify-content: space-between;
   }
 
+  .lg\:px-16 {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
   .lg\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
@@ -1703,8 +1703,8 @@ video {
 }
 
 @media (min-width: 1280px) {
-  .xl\:mx-16 {
-    margin-left: 4rem;
-    margin-right: 4rem;
+  .xl\:px-32 {
+    padding-left: 8rem;
+    padding-right: 8rem;
   }
 }

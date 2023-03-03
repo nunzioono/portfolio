@@ -16,7 +16,7 @@ function Home() {
   const indicatorPath = process.env.PUBLIC_URL+(darkTheme?"/images/home_body2_rightside_darkindicator.png":"/images/home_body2_rightside_indicator.png")
 
   return (
-    <div className="w-full pt-44 px-8 z-10 dark:bg-dark lg:mx-8">
+    <div className="w-full pt-44 px-8 z-10 dark:bg-dark lg:px-16 xl:px-32">
 
 		<div className="body1 h-screen w-full md:flex">
 			<div className="h-screen lg:w-1/2">
