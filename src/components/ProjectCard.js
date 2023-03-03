@@ -1,18 +1,9 @@
 import { Link } from "react-router-dom";
-import { storage } from "../firebase";
-import { ref, getDownloadURL } from "firebase/storage";
 
 const ProjectCard = (props)=>{
-    getDownloadURL(ref(storage, props.imageBackground))
-      .then((url) => {
-    
-        // Or inserted into an <img> element
-        const img = document.getElementById('imageCard'+props.id);
-        img.setAttribute('src', url);
-      })
-      .catch((error) => {
-        console.log(error)
-    })
+    const img = document.getElementById('imageCard'+props.id);
+    img.setAttribute('src', props.imageBackground);
+
 
     return (
         <Link key={props.id} to={"/projects/"+props.id} className={"h-48 w-48 m-10 md:w-36 md:h-36 rounded-3xl border-[1px] border-lightblue dark:border-lightorange"+(!props.iconsViewMode?" lg:m-0 lg:my-3 lg:w-full lg:mx-auto bg-white dark:bg-dark border-1 border-lightblue dark:border-lightorange flex justify-start items-center ":" border-1 border-lightblue overflow-hidden w-72")}>

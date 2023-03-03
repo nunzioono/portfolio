@@ -1,15 +1,13 @@
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { selectDarkTheme } from "../slices/themeSlice";
-import { db } from "../firebase";
-import { onSnapshot, collection, query } from "firebase/firestore";
 import ProjectCard from "../components/ProjectCard";
 
 const Projects= () => {
     const [projects, setProjects] = useState([]);
     useEffect(() => { 
 
-        setProjects(data)
+        setProjects()
         return;
     }, []);
     const [ iconsViewMode, setIconsViewMode ] = useState(true);

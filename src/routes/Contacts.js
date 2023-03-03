@@ -1,6 +1,3 @@
-import { db } from '../firebase';
-import { collection, addDoc } from 'firebase/firestore';
-
 const Contacts= () => {
 
     const sendEmail = async () => {
@@ -8,22 +5,10 @@ const Contacts= () => {
         const email = document.getElementById("senderemail").value;
         const message = document.getElementById("sendermessage").value;
 
-        if(name && email && message){
-            const mailCollection=collection(db,'mail')
-            await addDoc(mailCollection,{
-                to: 'nunzioonorati@gmail.com',
-                message: {
-                subject: 'info on projects from '+name,
-                text: message+"\nYou can find me at "+email,
-                html: message+"<br/>You can find me at "+email,
-                },
-            })
 
-            document.getElementById("sendername").value="";
-            document.getElementById("senderemail").value="";
-            document.getElementById("sendermessage").value="";
-        }
-
+        document.getElementById("sendername").value="";
+        document.getElementById("senderemail").value="";
+        document.getElementById("sendermessage").value="";
     }
 
     return (
