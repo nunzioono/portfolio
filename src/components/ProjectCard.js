@@ -8,11 +8,11 @@ const ProjectCard = (props)=>{
     },[]);
 
     return (
-        <Link key={props.id} to={props.githubLink} className={"h-48 w-48 m-10 md:w-36 md:h-36 rounded-3xl border-[1px] border-lightblue dark:border-lightorange"+(!props.iconsViewMode?" lg:m-0 lg:my-3 lg:w-full lg:mx-auto bg-white dark:bg-dark border-1 border-lightblue dark:border-lightorange flex justify-start items-center ":" border-1 border-lightblue overflow-hidden w-72")}>
-            <img id={"imageCard"+props.id} alt="" className={"rounded-2xl "+(props.iconsViewMode?"h-full w-full ":"w-32 h-32 shadow-inner shadow-lightblue")}/>
+        <a key={props.id} href={props.githubLink} className={"h-48 w-48 m-10 md:w-36 md:h-36 rounded-3xl border-[1px] border-lightblue dark:border-lightorange"+(!props.iconsViewMode?" lg:m-0 lg:my-3 lg:w-full lg:mx-auto bg-white dark:bg-dark border-1 border-lightblue dark:border-lightorange flex justify-start items-center ":" border-1 border-lightblue overflow-hidden w-72")}>
+            <img id={"imageCard"+props.id} alt="" className={"rounded-2xl "+(props.iconsViewMode?"h-full w-full ":"w-32 h-32")}/>
             {props.iconsViewMode && <div className="relative">
                 <div className="absolute bottom-0 rounded-2xl left-0 right-0 bg-gradient-to-t from-grey to-transparent h-64 flex flex-col justify-end items-start opacity-0 hover:opacity-100">
-                    <div className="flex">{props.tags.map(tag=><div key={props.id} className="rounded-md py-1 px-2 text-xs bg-blue dark:bg-lightorange text-white ml-3 mb-1">{tag}</div>)}</div>
+                    <div className="flex flex-wrap">{props.tags.map(tag=><div key={props.id} className="rounded-md py-1 px-2 text-xs bg-blue dark:bg-lightorange text-white ml-3 mb-1">{tag}</div>)}</div>
                     <h1 className="font-khulabold text-white text-xl ml-3 mb-2">{props.name}</h1>
                 </div>
             </div>}
@@ -24,7 +24,7 @@ const ProjectCard = (props)=>{
                     <p className="font-khularegular text-lightgrey ml-3">{props.description}</p>
                 </div>
             </div>}
-        </Link>
+        </a>
     );
 }
 

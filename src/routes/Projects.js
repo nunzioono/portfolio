@@ -120,7 +120,7 @@ const Projects= () => {
                     <option value={5}>Full</option>
                 </select>
             </div>
-            <div className={"flex flex-wrap flex-1 mt-8 overflow-y-scroll border-2 border-blue bg-lightblue dark:bg-lightorange bg-opacity-20 dark:bg-opacity-20 dark:border-lightorange rounded-xl p-2 mb-14 "+(!iconsViewMode?"justify-start flex-col items-start":"")}>
+            <div className={"flex flex-1 mt-8 overflow-y-scroll border-2 border-blue bg-lightblue dark:bg-lightorange bg-opacity-20 dark:bg-opacity-20 dark:border-lightorange rounded-xl p-2 mb-14 "+(!iconsViewMode?"justify-start flex-col items-start":"flex-wrap ")}>
                 {
                     projects!==undefined && projects
                     .filter((proj)=>{
