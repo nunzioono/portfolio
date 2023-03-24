@@ -6,9 +6,10 @@ import ProjectCard from "../components/ProjectCard";
 const Projects= () => {
     const [projects, setProjects] = useState([]);
     useEffect(() => { 
-
-        setProjects()
-        return;
+        fetch("https://portfolio-server-as2q.onrender.com")
+        .then(res=>res.json())
+        .then(data=>setProjects(data.projects))
+        .catch(err=>console.log(err))
     }, []);
     const [ iconsViewMode, setIconsViewMode ] = useState(true);
     const [ searched, setSearched ] = useState("");
@@ -119,7 +120,7 @@ const Projects= () => {
                     <option value={5}>Full</option>
                 </select>
             </div>
-            <div className={"flex flex-wrap flex-1 mt-8 overflow-y-scroll border-2 border-blue bg-lightblue dark:bg-lightorange bg-opacity-20 dark:bg-opacity-20 dark:border-lightorange rounded-xl p-2 mb-14 "+(!iconsViewMode?"justify-around flex-col items-start":"")}>
+            <div className={"flex flex-wrap flex-1 mt-8 overflow-y-scroll border-2 border-blue bg-lightblue dark:bg-lightorange bg-opacity-20 dark:bg-opacity-20 dark:border-lightorange rounded-xl p-2 mb-14 "+(!iconsViewMode?"justify-start flex-col items-start":"")}>
                 {
                     projects!==undefined && projects
                     .filter((proj)=>{
@@ -136,6 +137,7 @@ const Projects= () => {
                             description={proj.description} 
                             tags={proj.tags}
                             imageBackground={proj.imageBackground}
+                            githubLink={proj.githubLink}
                         />
                         )
                     })
