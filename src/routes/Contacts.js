@@ -5,7 +5,7 @@ const Contacts= () => {
         const from = document.getElementById("senderemail").value;
         const message = document.getElementById("sendermessage").value;
 
-        fetch("http://localhost:3000/send-email",{
+        fetch(process.env.REACT_APP_ENV=="PRODUCTION"?"https://portfolio-server-as2q.onrender.com":"http://localhost:3000"+"/send-email",{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -54,7 +54,7 @@ const Contacts= () => {
                 <div className="h-screen right-side w-full flex flex-col justify-start items-start">
                     <h3 className="font-martelbold text-3xl text-grey mb-8 dark:text-white">Reach me on my contacts:</h3>
                     
-                    <iframe  className="w-full rounded-xl border-2 border-lightblue dark:border-lightorange mb-4"  title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.7751204812625!2d16.8869819156497!3d41.117602120638566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347e83f813aa1f3%3A0xd1ab50600b4a6c89!2sVia%20Giuseppe%20di%20Vagno%2C%203%2C%2070126%20Bari%20BA!5e0!3m2!1sit!2sit!4v1679682935860!5m2!1sit!2sit" width="600" height="450" allowFullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe  className="w-full rounded-xl border-2 border-lightblue dark:border-lightorange mb-4"  title="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3005.7751204812625!2d16.8869819156497!3d41.117602120638566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1347e83f813aa1f3%3A0xd1ab50600b4a6c89!2sVia%20Giuseppe%20di%20Vagno%2C%203%2C%2070126%20Bari%20BA!5e0!3m2!1sit!2sit!4v1679682935860!5m2!1sit!2sit" width="600" height="450" allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
                     <p className="text-lightgrey dark:text-lightorange">Email: nunzioonorati@gmail.com</p>
                     <p className="text-lightgrey dark:text-lightorange">Address: Via Giuseppe di Vagno 3, Bari, Italy</p>
 
