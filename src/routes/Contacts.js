@@ -5,7 +5,7 @@ const Contacts= () => {
         const from = document.getElementById("senderemail").value;
         const message = document.getElementById("sendermessage").value;
 
-        fetch("https://portfolio-server-as2q.onrender.com/send-email",{
+        fetch("http://localhost:3000/send-email",{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
