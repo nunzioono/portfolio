@@ -5,7 +5,7 @@ const Contacts= () => {
         const from = document.getElementById("senderemail").value;
         const message = document.getElementById("sendermessage").value;
 
-        fetch((process.env.REACT_APP_ENV=="PRODUCTION"?"https://portfolio-server-as2q.onrender.com":"http://localhost:3000")+"/send-email",{
+        fetch((process.env.REACT_APP_ENV=="PRODUCTION"?"https://portfolio-server-as2q.onrender.com/send-email":"http://localhost:3000/send-email"),{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
